@@ -1,6 +1,5 @@
 package com.cg.customerManagement.customer.entity;
 
-
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -42,6 +41,4 @@ public class Account {
 	public void setCreated(LocalDateTime created) {
 		this.created = created;
 	}
-	
-	
 }

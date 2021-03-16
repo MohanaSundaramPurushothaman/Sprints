@@ -14,14 +14,12 @@ public class CustomerDao implements ICustomerDao{
 	
 	@PersistenceContext
 	private EntityManager em;
-	
 
 	@Override
 	public Customer add(Customer customer) {
 		em.persist(customer);
 		return customer;
 	}
-
 	@Override
 	public Customer findByID(long customerID) {
 		Customer customer=em.find(Customer.class,customerID);
@@ -30,7 +28,6 @@ public class CustomerDao implements ICustomerDao{
 
 	@Override
 	public Customer update(Customer customer) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

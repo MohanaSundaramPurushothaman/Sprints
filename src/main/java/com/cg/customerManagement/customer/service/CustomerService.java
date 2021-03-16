@@ -19,10 +19,8 @@ public class CustomerService implements ICustomerService {
 	
 	@Autowired
 	private ICustomerDao dao;
-	
 	@Autowired
 	private EntityManager em;
-
 	@Override
 	public Customer findByID(long customerID) {
 		Customer customer=dao.findByID(customerID);
@@ -38,6 +36,4 @@ public class CustomerService implements ICustomerService {
 		Customer customer=new Customer(name,account);
 		return dao.add(customer);
 	}
-	
-
 }
