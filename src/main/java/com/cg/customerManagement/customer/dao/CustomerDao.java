@@ -1,34 +1,34 @@
 package com.cg.customerManagement.customer.dao;
 
+import com.cg.customerManagement.customer.entity.Customer;
+import org.springframework.stereotype.Repository;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-
-import org.springframework.stereotype.Repository;
-
-import com.cg.customerManagement.customer.entity.Customer;
-
-
+import javax.transaction.Transactional;
 
 @Repository
 public class CustomerDao implements ICustomerDao{
-	
-	@PersistenceContext
-	private EntityManager em;
 
-	@Override
-	public Customer add(Customer customer) {
-		em.persist(customer);
-		return customer;
-	}
-	@Override
-	public Customer findByID(long customerID) {
-		Customer customer=em.find(Customer.class,customerID);
-		return customer;
-	}
+    @PersistenceContext
+    private EntityManager em;
 
-	@Override
-	public Customer update(Customer customer) {
-		return null;
-	}
-	
+    @Transactional
+    @Override
+    public Customer add(Customer customer) {
+        em.persist(customer);
+        return customer;
+    }
+
+    @Transactional
+    @Override
+    public Customer findByID(long customerID) {
+        return em.find(Customer.class,customerID);
+    }
+
+    @Transactional
+    @Override
+    public Customer update(Customer customer) {
+        customer=em.merge(customer);
+        return customer;
+    }
 }

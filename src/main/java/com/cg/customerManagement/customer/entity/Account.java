@@ -1,7 +1,6 @@
 package com.cg.customerManagement.customer.entity;
 
 import java.time.LocalDateTime;
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
