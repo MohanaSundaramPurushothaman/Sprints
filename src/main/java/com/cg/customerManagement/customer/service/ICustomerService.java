@@ -8,7 +8,7 @@ import java.util.Set;
 
 public interface ICustomerService {
 
-    public Customer findByID(long customerID);
+    public Customer findByID(String string);
     public Customer createCustomer(double v, String name);
 
     public Set<Item> itemsBoughtByCustomer(Long customerID);
@@ -16,7 +16,6 @@ public interface ICustomerService {
     @Transactional
     Customer createCustomer(String name);
 
-    Customer findById(Long customerId);
-
-    public Customer addAmount(Long customerId, double amount);
+	public Customer addAmount(String id, double amount);
+	Customer findById(String customerId);
 }

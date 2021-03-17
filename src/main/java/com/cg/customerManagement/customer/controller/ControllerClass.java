@@ -1,6 +1,6 @@
 package com.cg.customerManagement.customer.controller;
 
-import java.util.Set;
+import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -40,7 +40,7 @@ public class ControllerClass {
     }
 
     @GetMapping("/findbyid/{id}")
-    public CustomerDetail findById(@PathVariable Long id)
+    public CustomerDetail findById(@PathVariable String id)
     {
         return util.toDetail(service.findByID(id));
     }

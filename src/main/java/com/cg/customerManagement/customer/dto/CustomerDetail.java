@@ -1,17 +1,17 @@
 package com.cg.customerManagement.customer.dto;
 
 public class CustomerDetail {
-	private Long id;
+	private String id;
 	private String name;
 	private Long account_id;
 	private double balance;
 
-	public Long getId() {
+	public String getId() {
 		return id;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setId(String string) {
+		this.id = string;
 	}
 
 	public String getName() {

@@ -14,7 +14,7 @@ import java.util.*;
 
 
 
-    @Service
+    @Service 
     public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository cRepository;
@@ -37,7 +37,7 @@ import java.util.*;
     }
 
     @Override
-    public Customer findById(Long customerId) {
+    public Customer findById(String customerId) {
         Optional<Customer> optional = cRepository.findById(customerId);
         if (!optional.isPresent()) {
             throw new CustomerNotFoundException("No Customer found for this id");
@@ -48,7 +48,7 @@ import java.util.*;
 
 	@Transactional
     @Override
-    public Customer addAmount(Long customerId, double amount) {
+    public Customer addAmount(String customerId, double amount) {
 
         Customer customer = findById(customerId);
         Account account = customer.getAccount();
@@ -59,7 +59,7 @@ import java.util.*;
     }
 
     @Override
-    public Customer findByID(long customerID) {
+    public Customer findByID(String customerID) {
         return null;
     }
 
